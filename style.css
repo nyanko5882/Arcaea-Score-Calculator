@@ -62,3 +62,7 @@ hr {
     margin-right: 4px;
     width: 200px;
 }
+div > span {
+    width: 300px;
+    text-align: right;
+}
