@@ -6,7 +6,6 @@
 html {
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
 }
 body {
     width: 100%;
@@ -42,7 +41,7 @@ hr {
     color: var(--text);
     border: 1px solid var(--text);
 }
-span {
+#score {
     font-weight: bold;
 }
 #score-display {
