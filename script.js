@@ -87,7 +87,7 @@ UI.combo.addEventListener("input", () => {
 
 function calculateScore() {
     if (notes.combo === 0) return;
-    if (notes.combo < (notes.far + notes.lost)) return;
+    if (notes.combo < (notes.far + notes.lost + notes.pure)) return;
 
     const pureScore = 10000000 / notes.combo;
     score = Math.round(notes.combo + 10000000 - notes.far * (pureScore / 2) - notes.lost * pureScore - notes.pure);
