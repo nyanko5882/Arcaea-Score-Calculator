@@ -21,6 +21,7 @@ let notes = {
     lost: 0,
     pure: 0
 };
+let score = 10000000;
 const rank = [
     ["EX+", 9900000],
     ["EX", 9800000],
@@ -87,16 +88,16 @@ function calculateScore() {
     if (notes.combo < (notes.far + notes.lost)) return;
 
     const pureScore = 10000000 / notes.combo;
-    const score = Math.round(notes.combo + 10000000 - notes.far * (pureScore / 2) - notes.lost * pureScore - notes.pure);
+    score = Math.round(notes.combo + 10000000 - notes.far * (pureScore / 2) - notes.lost * pureScore - notes.pure);
 
     UI.score.textContent = score;
     UI.rank.textContent = checkRank(score);
 }
 
-function checkRank(sc) {
-    let rankIndex;
+function checkRank() {
+    let rankIndex = 0;
     for (let i = 0; i < rank.length; i++) {
-        if (sc >= rank[i][1]) {
+        if (score >= rank[i][1]) {
             rankIndex = i;
             break;
         }
