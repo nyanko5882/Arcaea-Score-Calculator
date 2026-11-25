@@ -41,7 +41,10 @@ hr {
     color: var(--text);
     border: 1px solid var(--text);
 }
-#score, #rank {
+#score {
+    font-weight: bold;
+}
+#rank {
     font-weight: bold;
 }
 #score-display {
