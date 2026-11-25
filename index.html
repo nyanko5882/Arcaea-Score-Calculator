@@ -9,15 +9,15 @@
         <p id="score-display">Score: <span id="score">10000000</span></p>
         <hr>
         <input id="input-maxcombo" type="number" min="1" placeholder="最大コンボ数を入力">
-        <div id="panel-far">
-            <p id="far-display">FAR: <span id="far">0</span></p>
-            <input type="range" min="0" id="input-far-range" class="input-range">
-            <input type="number" min="0" id="input-far" class="input-number">
+        <div id="panel-far" class="judge-panel">
+            FAR: <span id="far">0</span>
+            <input type="range" min="0" id="input-far-range" class="input-judge">
+            <input type="number" min="0" id="input-far" class="input-judge" placeholder="FAR数を入力">
         </div>
-        <div id="panel-lost">
-            <p id="lost-display">LOST: <span id="lost">0</span></p>
-            <input type="range" min="0" id="input-lost-range" class="input-range">
-            <input type="number" min="0" id="input-lost" class="input-number">
+        <div id="panel-lost" class="judge-panel">
+            LOST: <span id="lost">0</span>
+            <input type="range" min="0" id="input-lost-range" class="input-judge">
+            <input type="number" min="0" id="input-lost" class="input-judge" placeholder="LOST数を入力">
         </div>
         <script src="script.js"></script>
     </body>

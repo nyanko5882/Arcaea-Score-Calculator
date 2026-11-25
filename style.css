@@ -1,6 +1,7 @@
 :root {
     --text: #000000;
     --background: #ffffff;
+    --border: #cccccc;
 }
 html {
     width: 100vw;
@@ -21,20 +22,34 @@ body {
 }
 #input-maxcombo {
     text-align: left;
+    font-size: 32px;
+    height: 48px;
+    line-height: 32px;
+    border: 1px solid var(--border);
 }
 body > div {
     display: flex;
     flex-direction: row;
     width: 90%;
+    justify-content: center;
 }
 hr {
     width: 90%;
     height: 1px;
     color: var(--text);
+    border: none;
 }
 span {
     font-weight: bold;
 }
 div > * {
     padding-left: 4px;
+}
+#score-display {
+    font-size: 48px;
+    text-align: center;
+}
+.input-judge {
+    height: 24px;
+    width: 300px;
 }
