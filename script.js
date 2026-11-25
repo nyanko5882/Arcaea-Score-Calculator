@@ -2,11 +2,13 @@ const UI = {
     input: {
         slider: {
             far: document.getElementById("input-far-slider"),
-            lost: document.getElementById("input-lost-slider")
+            lost: document.getElementById("input-lost-slider"),
+            pure: document.getElementById("input-pure-slider")
         },
         number: {
             far: document.getElementById("input-far"),
-            lost: document.getElementById("input-lost")
+            lost: document.getElementById("input-lost"),
+            pure: document.getElementById("input-pure")
         }
     },
     combo: document.getElementById("input-maxcombo"),
@@ -24,32 +26,51 @@ let notes = {
 UI.input.slider.far.addEventListener("change", () => {
     const value = UI.input.slider.far.valueAsNumber;
     if (value === "") return;
-    notes.far = value;
-    UI.input.number.far.value = String(notes.far);
+    notes.far = Number(value);
+    UI.input.number.far.value = value;
+    calculateScore();
 });
 UI.input.slider.lost.addEventListener("change", () => {
     const value = UI.input.slider.lost.valueAsNumber;
     if (value === "") return;
-    notes.lost = value;
-    UI.input.number.lost.value = String(notes.lost);
+    notes.lost = Number(value);
+    UI.input.number.lost.value = value;
+    calculateScore();
 });
 UI.input.number.far.addEventListener("change", () => {
     const value = UI.input.number.far.valueAsNumber;
     if (value === "") return;
-    notes.far = value;
-    UI.input.slider.far.value = String(notes.far);
+    notes.far = Number(value);
+    UI.input.slider.far.value = value;
+    calculateScore();
 });
 UI.input.number.lost.addEventListener("change", () => {
     const value = UI.input.number.lost.valueAsNumber;
     if (value === "") return;
-    notes.lost = value;
-    UI.input.slider.lost.value = String(notes.lost);
+    notes.lost = Number(value);
+    UI.input.slider.lost.value = value;
+    calculateScore();
 });
+UI.input.slider.pure.addEventListener("change", () => {
+    const value = UI.input.number.pure.value;
+    if (value === "") return;
+    notes.pure = Number(value);
+    UI.input.slider.pure.value = value;
+    calculateScore();
+})
+UI.input.number.pure.addEventListener("change", () => {
+    const value = UI.input.slider.pure.value;
+    if (value === "") return;
+    notes.pure = Number(value);
+    UI.input.number.pure.value = value;
+    calculateScore();
+})
 
 UI.combo.addEventListener("change", () => {
-    const value = UI.combo.valueAsNumber;
+    const value = UI.combo.value;
     if (value === "") return;
-    notes.combo = value;
+    notes.combo = Number(value);
+    calculateScore();
 })
 
 function calculateScore() {
@@ -57,7 +78,7 @@ function calculateScore() {
     if (notes.combo < (notes.far + notes.lost)) return;
 
     const pureScore = 10000000 / notes.combo;
-    const score = Math.round(notes.combo + 10000000 - notes.far * (pureScore / 2) - notes.lost * pureScore);
+    const score = Math.round(notes.combo + 10000000 - notes.far * (pureScore / 2) - notes.lost * pureScore - notes.pure);
 
-    UI.score = score;
+    UI.score.textContent = score;
 }
