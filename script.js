@@ -94,10 +94,10 @@ function calculateScore() {
     UI.rank.textContent = checkRank(score);
 }
 
-function checkRank() {
+function checkRank(sc) {
     let rankIndex = 0;
     for (let i = 0; i < rank.length; i++) {
-        if (score >= rank[i][1]) {
+        if (sc >= rank[i][1]) {
             rankIndex = i;
             break;
         }
