@@ -52,14 +52,14 @@ UI.input.number.lost.addEventListener("change", () => {
     UI.input.slider.lost.value = value;
     calculateScore();
 });
-UI.input.number.pure.addEventListener("input", () => {
+UI.input.number.pure.addEventListener("change", () => {
     const value = UI.input.number.pure.value;
     if (value === "") return;
     notes.pure = Number(value);
     UI.input.slider.pure.value = value;
     calculateScore();
 })
-UI.input.slider.pure.addEventListener("change", () => {
+UI.input.slider.pure.addEventListener("input", () => {
     const value = UI.input.slider.pure.value;
     if (value === "") return;
     notes.pure = Number(value);
