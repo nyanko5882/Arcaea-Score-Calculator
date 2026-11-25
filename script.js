@@ -95,9 +95,9 @@ function calculateScore() {
 
 function checkRank(sc) {
     let rankIndex;
-    for (const array of rank) {
-        if (sc >= array[1]) {
-            rankIndex = array;
+    for (let i = 0; i < rank.length; i++) {
+        if (sc >= rank[i][1]) {
+            rankIndex = i;
             break;
         }
     }
