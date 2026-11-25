@@ -23,14 +23,14 @@ let notes = {
 //ごめんなさい調べるの面倒だったので一つずつ書きます
 //2回動くと思うんですけど値の変化はないので許して
 //本当にごめんなさい
-UI.input.slider.far.addEventListener("change", () => {
+UI.input.slider.far.addEventListener("input", () => {
     const value = UI.input.slider.far.valueAsNumber;
     if (value === "") return;
     notes.far = Number(value);
     UI.input.number.far.value = value;
     calculateScore();
 });
-UI.input.slider.lost.addEventListener("change", () => {
+UI.input.slider.lost.addEventListener("input", () => {
     const value = UI.input.slider.lost.valueAsNumber;
     if (value === "") return;
     notes.lost = Number(value);
@@ -51,7 +51,7 @@ UI.input.number.lost.addEventListener("change", () => {
     UI.input.slider.lost.value = value;
     calculateScore();
 });
-UI.input.slider.pure.addEventListener("change", () => {
+UI.input.slider.pure.addEventListener("input", () => {
     const value = UI.input.number.pure.value;
     if (value === "") return;
     notes.pure = Number(value);
