@@ -83,7 +83,7 @@ UI.combo.addEventListener("input", () => {
     if (value === "") return;
     notes.combo = Number(value);
     calculateScore();
-})
+});
 
 function calculateScore() {
     if (notes.combo === 0) return;
