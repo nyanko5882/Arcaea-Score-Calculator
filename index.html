@@ -6,16 +6,19 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <input id="input-maxcombo" type="number" min="1">
+        <p id="score-display">Score: <span id="score">10000000</span></p>
+        <hr>
+        <input id="input-maxcombo" type="number" min="1" placeholder="最大コンボ数を入力">
         <div id="panel-far">
-            <input type="range" min="0" id="input-far-range">
-            <input type="number" min="0" id="input-far">
+            <p id="far-display">FAR: <span id="far">0</span></p>
+            <input type="range" min="0" id="input-far-range" class="input-range">
+            <input type="number" min="0" id="input-far" class="input-number">
         </div>
         <div id="panel-lost">
-            <input type="range" min="0" id="input-lost-range">
-            <input type="number" min="0" id="input-lost">
+            <p id="lost-display">LOST: <span id="lost">0</span></p>
+            <input type="range" min="0" id="input-lost-range" class="input-range">
+            <input type="number" min="0" id="input-lost" class="input-number">
         </div>
-        <p id="score-display">Score: <span id="score"></span></p>
         <script src="script.js"></script>
     </body>
 </html>
