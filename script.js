@@ -17,48 +17,49 @@ const UI = {
 let notes = {
     combo: 0,
     far: 0,
-    lost: 0
+    lost: 0,
+    pure: 0
 };
 
 //ごめんなさい調べるの面倒だったので一つずつ書きます
 //2回動くと思うんですけど値の変化はないので許して
 //本当にごめんなさい
 UI.input.slider.far.addEventListener("input", () => {
-    const value = UI.input.slider.far.valueAsNumber;
+    const value = UI.input.slider.far.value;
     if (value === "") return;
     notes.far = Number(value);
     UI.input.number.far.value = value;
     calculateScore();
 });
 UI.input.slider.lost.addEventListener("input", () => {
-    const value = UI.input.slider.lost.valueAsNumber;
+    const value = UI.input.slider.lost.value;
     if (value === "") return;
     notes.lost = Number(value);
     UI.input.number.lost.value = value;
     calculateScore();
 });
 UI.input.number.far.addEventListener("change", () => {
-    const value = UI.input.number.far.valueAsNumber;
+    const value = UI.input.number.far.value;
     if (value === "") return;
     notes.far = Number(value);
     UI.input.slider.far.value = value;
     calculateScore();
 });
 UI.input.number.lost.addEventListener("change", () => {
-    const value = UI.input.number.lost.valueAsNumber;
+    const value = UI.input.number.lost.value;
     if (value === "") return;
     notes.lost = Number(value);
     UI.input.slider.lost.value = value;
     calculateScore();
 });
-UI.input.slider.pure.addEventListener("input", () => {
+UI.input.number.pure.addEventListener("input", () => {
     const value = UI.input.number.pure.value;
     if (value === "") return;
     notes.pure = Number(value);
     UI.input.slider.pure.value = value;
     calculateScore();
 })
-UI.input.number.pure.addEventListener("change", () => {
+UI.input.slider.pure.addEventListener("change", () => {
     const value = UI.input.slider.pure.value;
     if (value === "") return;
     notes.pure = Number(value);
